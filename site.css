@@ -8,8 +8,19 @@
     Assign_1 document
  */
 
+h1, h2, h3, h4 {
+    background-color: #3c275a;
+    color: white;
+    border: 1px solid #D6A800;
+    padding: 10px;
+}
 
 /* Styles for Assignment 1 */
+#icon-mode {
+    position: relative;
+    bottom: 25px;
+}
+
  #icon-mode:hover {
     cursor: pointer;
 }
@@ -22,6 +33,7 @@
 
 #icon-text {
     padding-left: 10px;
+    font-size: 20px;
 }
 
 .pull-right {
