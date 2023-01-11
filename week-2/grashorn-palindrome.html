@@ -1,0 +1,66 @@
+<!-- 
+  Title: Assignment 2.2 - Palindrome App
+  Author: Brett Grashorn
+  Date: 1/10/2023
+  Description: Palindrome App for WEB 330 - Enterprise JavaScript II
+  Sources:  Web 330 HTML, CSS, and JavaScript Requirements 
+            document
+            Assign_2 document
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WEB 330 - Enterprise JavaScript II</title>
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="../site.css" />
+    <link rel="stylesheet" href="../theme.css" />
+
+    <!-- Font Awesome Kit -->
+    <script
+      src="https://kit.fontawesome.com/0b3339a5a1.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+     <!-- JavaScript -->
+     <script type="application/javascript" src="../web-330/theme.js"></script>
+    </head>
+
+  </head>
+  <body>
+    <!-- Gives the app the appropriate header -->
+    <h1 class="app-header">Welcome to the Palindrome App!</h1>
+    <!-- Input Card -->
+    <div class="card">
+        <div class="card-title">Palindrome Checker</div>
+        <div class="card-content">
+            <div class="form">
+                <div class="form-field">
+                    <label for="txtPhrase">Phrase value:</label>
+                    <input type="text" id="txtPhrase">
+                </div>
+                <div class="form-field">
+                    <button class="btn btn-primary" id="btnCheck">Check Phrase</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Output Card -->
+    <div class="card">
+        <div class="card-title">Palindrome Results</div>
+        <div class="card-content"></div>
+    </div>
+  </body>
+</html>
