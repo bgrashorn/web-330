@@ -25,3 +25,25 @@ function setDefaultTheme() {
 function setSelectedTheme() {
     document.body.classList.value = localStorage.getItem("mode") || "light-theme";
 }
+
+// Assignment 2.2
+
+function getTodaysDate() {
+    let newDate = new Date().toLocaleDateString();
+
+    return newDate;
+      
+    }
+  console.log(getTodaysDate);
+
+    function getLength() {
+    return getLength.length;
+    }
+
+    function reverse() {
+
+    }
+    
+    function isPalindrome() {
+      
+    }
