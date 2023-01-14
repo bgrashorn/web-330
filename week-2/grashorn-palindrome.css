@@ -1,0 +1,27 @@
+.card-title {
+    color: #4F3674;
+}
+
+#icon-mode {
+    position: relative;
+    top: 5px;
+    right: 5px;
+}
+
+#assign-results-text {
+    text-align: center;
+    font-size: 28px;
+}
+
+.card {
+    width: 100%;
+}
+
+.btn {
+    width: 100%;
+}
+
+.return-home {
+    margin-left: 34.25%;
+    padding-top: 5px;
+}
