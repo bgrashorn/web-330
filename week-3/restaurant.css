@@ -1,0 +1,15 @@
+/**
+    Title: restaurant.css
+    Author: Brett Grashorn
+    Date: 1/17/23
+    Description: Stylesheet for Assignment 3.2 - Restaurant App
+    Sources:  Web 330 HTML, CSS, and JavaScript Requirements 
+    document
+    Assign_3 document
+ */
+
+ #icon-mode {
+    position: relative;
+    top: 5px;
+    right: 5px;
+}
