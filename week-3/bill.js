@@ -10,8 +10,6 @@
   ========================================================
  */
 
-import { MainCourse } from "./main-course";
-
 
 export class Bill {
 
@@ -20,8 +18,6 @@ export class Bill {
     _mainCourses = [];
     _desserts = [];   
     
-
-
     addBeverage(beverage)
     {
     this._beverages.push(beverage);
@@ -66,7 +62,7 @@ export class Bill {
         total += parseFloat(dessert.price);
     })
 
-    return total.slice(0,1);
+    return total
     }
 
 }

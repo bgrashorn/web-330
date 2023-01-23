@@ -9,7 +9,7 @@
  ;          Assign_3 document
   ========================================================
  */
-
+// This creates the dessert class imports class created in product.js
   import { Product } from "./product.js";
 
   export class Dessert extends Product

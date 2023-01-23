@@ -10,6 +10,7 @@
   ========================================================
  */
 
+  // This creates the main course class imports class created in product.js
 import { Product } from "./product.js";
 
 export class MainCourse extends Product

@@ -10,6 +10,7 @@
   ========================================================
  */
 
+  // This creates the beverage class imports class created in product.js
   import { Product } from "./product.js";
 
   export class Beverage extends Product 

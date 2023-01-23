@@ -10,6 +10,7 @@
   ========================================================
  */
 
+  // This creates and exports the Product class
   export class Product 
   {
     constructor(name, price)

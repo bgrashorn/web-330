@@ -8,8 +8,40 @@
     Assign_3 document
  */
 
+ /* Adjust position of light/dark mode button */
  #icon-mode {
     position: relative;
     top: 5px;
     right: 5px;
+}
+
+/* Applies correct text color to Card Title */
+.card-title {
+    color: var(--card-title-color);
+}
+
+/* Adjusts Card size to fit specifications */
+.card {
+    width: 100%;
+    text-align: left; 
+}
+
+.order-total {
+    text-align: center;
+}
+
+.card-content {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px; 
+}
+
+.assign-results-text {
+    text-align: center;
+    padding: 0;
+}
+
+.return-home {
+    margin-left: 34.25%;
+    width: 1%;
 }

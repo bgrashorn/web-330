@@ -10,6 +10,7 @@
   ========================================================
  */
 
+  // This creates the appetizer class imports class created in product.js
 import { Product } from "./product.js";
 
 export class Appetizer extends Product
