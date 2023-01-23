@@ -26,21 +26,20 @@
     text-align: left; 
 }
 
-.order-total {
-    text-align: center;
-}
-
+/* Puts menus in grids */
 .card-content {
     display: grid;
     grid-template-columns: auto auto;
     grid-gap: 10px; 
 }
 
+/* Centers Text for results */
 .assign-results-text {
     text-align: center;
     padding: 0;
 }
 
+/* Adjusts return button */
 .return-home {
     margin-left: 34.25%;
     width: 1%;

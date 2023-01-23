@@ -260,6 +260,7 @@
     </script>
 
     <script type="module">
+      // Imports other js files
       import {
         Bill,
         Beverage,
@@ -282,8 +283,10 @@
         const dessertsEl = document.getElementById("desserts");
         const desserts = dessertsEl.getElementsByTagName("input");
 
+        // Initiates new bill function
         let bill = new Bill();
 
+        // for loops for each category to go through all of the options that are checked
         for (let beverage of beverages) {
           if (beverage.checked) {
             bill.addBeverage(new Beverage(beverage.name, beverage.value));
@@ -310,6 +313,7 @@
           }
         }
 
+        // Sends total of checked options to Order Summary section
         let total = bill.getTotal();
         let roundedTotal = total.toFixed(2);
         document.getElementById("order-total").innerHTML =
