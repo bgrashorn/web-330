@@ -1,0 +1,31 @@
+/**
+    Title: grashorn-calorie.css
+    Author: Brett Grashorn
+    Date: 1/27/23
+    Description: Stylesheet for Assignment 4.2 - Calorie App
+    Sources:  Web 330 HTML, CSS, and JavaScript Requirements 
+    document
+    Assign_4 document
+ */
+
+ /* Food List mods according to Assign_4 */
+ #foodList {
+    float: right;
+    color: #df546a;
+    font-size: 12px;
+    letter-spacing: 2px;
+ }
+
+ /* Mode Switch adjustments */
+ #icon-mode {
+    position: relative;
+    top: 5px;
+    right: 5px;
+}
+
+/* Return Link adjustments */
+.return-home {
+    margin-left: 34.25%;
+    padding-top: 5px;
+}
+
