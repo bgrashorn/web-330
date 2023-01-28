@@ -10,10 +10,11 @@
 
  /* Food List mods according to Assign_4 */
  #foodList {
-    float: right;
+    float: left;
     color: #df546a;
     font-size: 12px;
     letter-spacing: 2px;
+    padding-top: 15px;
  }
 
  /* Mode Switch adjustments */
@@ -25,7 +26,12 @@
 
 /* Return Link adjustments */
 .return-home {
-    margin-left: 34.25%;
+    margin-left: 35.1%;
     padding-top: 5px;
+}
+
+/* Adjust assign-content div size */
+.assign-content {
+    width: 60%;
 }
 

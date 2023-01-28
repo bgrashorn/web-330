@@ -128,34 +128,48 @@
     </script>
     <!-- Assignment 4.2 JavaScript -->
     <script type="module">
-      import { CalorieConverter } from "./calorie-converter.js";
-      document.getElementById("btnSearch").onclick = function () {
-        let txtFoodItem = document.getElementById("txtFoodItem").value;
-        let foods = CalorieConverter.find(txtFoodItem).toLowerCase();
-        let tableData = `<table class="table"><th class="th-modified">Name</th><th class="th-modified">Calories</th>`;
-        for (let food of foods) {
-          tableData += `<tr class="table-hover">
-                  <td class="td-modified">${food.name}</td>
-                  <td class="td-modified">${food.calories}</td>
-                  </tr>`;
-          document.getElementById("searchResults").innerHTML =
-            tableData + `</table>`;
-        }
+      // Import from calorie-converter.js
+      import { CalorieConverter } from "./calorie-converter.js                           ";
+
+      // Assign txtFoodItemEl to txtFoodItem
+      let txtFoodItemEl = document.getElementById("txtFoodItem");
+
+      let foods = [];
+
+      // Register an onclick event for the btnSearch
+      document.getElementById("btnSearch").onclick = () => {
+        foods.push(CalorieConverter.find(txtFoodItemEl.value.toLowerCase()));
+        console.log(foods);
+        // Create tables to display data
+        let tableRows = foods
+          .map(
+            (food) =>
+              `<tr><td>${food[0].name}</td><td>${food[0].calories}</td></tr>`
+          )
+          .join("");
+        let tableData = `<table class="table"><thead><tr><th>Name</th><th>Calories</th></tr></thead><tbody>${tableRows}</tbody></table>`;
+        searchResults.innerHTML = tableData;
+        txtFoodItemEl.value = "";
       };
 
-      let txtFoodItemEL = document.getElementById("txtFoodItem");
+      // register event listener so user can use Enter key
       txtFoodItemEl.addEventListener("keyup", function (event) {
-        if (event.code == "Enter") {
+        if (event.keyCode === 13) {
           document.getElementById("btnSearch").click();
         }
       });
 
+      // call static data from CalorieConverter
       let foodList = CalorieConverter.data;
-      let foodListData = `<i> (Ex: `;
-      for (let x of foodList) {
-        foodListData += `${x.name},`;
+
+      // Create string for data to display in example section
+      let foodListData = "<i>(Ex: ";
+      for (let food of foodList) {
+        foodListData += food.name + ", ";
       }
-      document.getElementById("foodList").innerHTML = foodListData + `)</i>`;
+      foodListData = foodListData.slice(0, -2);
+      foodListData += ")";
+      document.getElementById("foodList").innerHTML = foodListData;
     </script>
   </body>
 </html>

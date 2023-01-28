@@ -10,6 +10,7 @@
   ========================================================
  */
 
+//  Create and export FoodModel class
 export class FoodModel {
     constructor(id, name, calories) {
         this.id = id;

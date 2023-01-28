@@ -60,6 +60,10 @@
     border-color: var(--input-border-color);
 }
 
+.card-title {
+    color: var(--card-title-color);
+}
+
 .btn-primary {
     background-color: #4F3674;
     color: #fff;
@@ -111,7 +115,7 @@ h2, h3, h4 {
 }
 
 
-/* Light Theme Variables */
+/* Light Theme Variables updated for 4.2 */
 body.light-theme {
     --text-color: #000;
     --background-color: #fff;
@@ -137,7 +141,7 @@ body.light-theme {
     --table-hover-color: #4f3674;
 }
 
-/* Dark Theme Variables */
+/* Dark Theme Variables updated for 4.2 */
 body.dark-theme {
     --text-color: #fafafa;
     --background-color: #303030;
@@ -148,7 +152,7 @@ body.dark-theme {
     --heading-color: #fff;
     --heading-border-color: #424242;
     --anchor-hover-background-color: #303030;
-    --card-title-color: #424242;
+    --card-title-color: #d176e1;
     --btn-background-color: #d176e1;
     --btn-color: #fff;
     --btn-hover-background-color: #7d4787;
@@ -161,23 +165,24 @@ body.dark-theme {
     --table-hover-color: #fff;
 }
 
-/* Assignment 4 Additions */
+/* Assignment 4 Table Additions */
 .table {
-    border-color: var(--table-border-color);
     border-collapse: collapse;
 }
 
 .table th {
     background-color: var(--table-header-background-color);
     color: var(--table-header-color);
+    padding: 12px;
+    text-align: left;
 }
 
-.table td,  th {
-    border-color: var(--table-border-color);
-    border-style: solid;
+.table td, th {
+    border: 1px solid var(--table-border-color);
+    padding: 8px;
 }
 
-.table-hover:hover {
+tr:hover {
     background-color: var(--table-hover-background-color);
     color: var(--table-hover-color);
     cursor: pointer;
