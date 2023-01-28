@@ -72,17 +72,13 @@ h1, h2, h3, h4 {
 }
 
 .return-home {
-    color: #4F3674;
+    
     text-decoration: none;
 }
 
 .return-home:hover {
     background-color: #D6A800;
-    color: #4F3674;
-}
-
-.return-home:visited {
-    color: #3c275a;
+    
 }
 
 .form {
