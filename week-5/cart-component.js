@@ -12,11 +12,14 @@
 
   class CartComponent extends HTMLElement {
     constructor() {
-        super();
-        function Callback() {
-            this.innerHTML = `<i id="cartIcon" class="fa fa-shopping-cart"></i> (<span id="cart-count"></span>)`;                                             
-        }
-    }
-  }
+        super(); 
+      }
 
+      connectedCallback() {
+        this.innerHTML = `<i id="basketIcon" class="fa fa-shopping-basket"></i> (<span id="basket-count"></span>)`
+      }
+    }
+
+    customElements.define('cart-component', CartComponent)
+   
   

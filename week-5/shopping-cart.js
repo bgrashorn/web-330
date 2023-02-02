@@ -13,15 +13,13 @@
 export class ShoppingCart {
     constructor() {
         this.products = [];
-        
-        function count() {
-            return product.length;
+    }
 
-        }
+    count () {
+        return this.products.length
+    }
 
-        function add() {
-            
-        }
-
+    add (products) {
+        this.products.push(product)
     }
 }
