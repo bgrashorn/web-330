@@ -8,9 +8,28 @@
     Assign_5 document
  */
 
+
+ /* Styling per Assign_5 */
+#cart-message {
+    float: right;
+    color: #df546a;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-left: 15px;
+}
+
+i:hover {
+    cursor: pointer;
+}
+
  /* Adjust assign-content div size */
 .assign-content {
     width: 70%;
+}
+
+/* Gives return button space on top  */
+.card {
+    margin-bottom: 5px;
 }
 
 /* Return Link adjustments */
@@ -26,13 +45,16 @@
     right: 5px;
 }
 
-#cart-message {
-    float: right;
-    color: #df546a;
-    font-size: 12px;
-    letter-spacing: 2px;
+/* Styles the shopping cart icon */
+cart-component {
+    color: var(--card-title-color);
+    font-size: 32px;
+    margin-left: 45%;
 }
 
-i:hover {
-    cursor: pointer;
+.drop-down-menu {
+    width: 62%;
+    height: 40px;
+    border-radius: 3px;
+
 }

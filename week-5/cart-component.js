@@ -10,13 +10,15 @@
   ========================================================
  */
 
+  // Creates CartComponent and extends it the HTML element
   class CartComponent extends HTMLElement {
     constructor() {
         super(); 
       }
 
+      // Connects the component when called
       connectedCallback() {
-        this.innerHTML = `<i id="basketIcon" class="fa fa-shopping-basket"></i> (<span id="basket-count"></span>)`
+        this.innerHTML = `<i id="cartIcon" class="fa fa-shopping-cart"></i> (<span id="cart-count"></span>)`
       }
     }
 

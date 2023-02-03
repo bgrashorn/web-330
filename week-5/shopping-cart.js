@@ -10,16 +10,25 @@
   ========================================================
  */
 
+//   Creates and exports ShoppingCart class
 export class ShoppingCart {
     constructor() {
         this.products = [];
     }
 
-    count () {
+    // Counts the length of products array
+    count() {
         return this.products.length
     }
-
-    add (products) {
+    // Adds project object to the array
+    add(product) {
         this.products.push(product)
+    }
+
+    // generates a list of products
+    * listProducts() {
+        for (let product of this.products) {
+            yield product;
+        }
     }
 }

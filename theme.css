@@ -69,6 +69,7 @@
     color: #fff;
     background-color: var(--btn-background-color);
     color: var(--btn-color);
+    border-radius: 3px;
 }
 
 .btn-primary:hover {
