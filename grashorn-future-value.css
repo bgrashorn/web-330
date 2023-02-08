@@ -1,0 +1,16 @@
+/**
+    Title: grashorn-future-value.css
+    Author: Brett Grashorn
+    Date: 2/7/23
+    Description: Stylesheet for Assignment 6.2 - Future Value App
+    Sources:  Web 330 HTML, CSS, and JavaScript Requirements 
+    document
+    Assign_6 document
+ */
+
+/* Mode Switch adjustments */
+#icon-mode {
+    position: relative;
+    top: 5px;
+    right: 5px;
+}
