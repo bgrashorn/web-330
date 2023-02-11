@@ -16,6 +16,7 @@
     this.name = name;
     this.field = field;
     }
+    // Validates the field and returns Boolean
     validate() {
         return Boolean(this.field);
     }

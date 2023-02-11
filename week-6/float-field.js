@@ -18,7 +18,7 @@ export class FloatField {
     }
     validate() {
         // if not NaN return true, else return false
-        if (!Number.isNaN(parseFloat(this.Field))) {
+        if (!Number.isNaN(parseFloat(this.field))) {
             return true;
         } else {
             return false;

@@ -16,6 +16,7 @@ import { FloatField } from "./float-field.js";
 import { FloatMinField} from "./float-min-field.js";
 import { FloatMaxField } from "./float-max-field.js";
 
+// Creates and exports Validator class
 export class Validator {
     validators = [];
     messages = [];
@@ -25,6 +26,7 @@ export class Validator {
         this.field = field;
     }
 
+    // Pushes new instances for each field
     addRequiredField() {
         this.validators.push(new RequiredField(this.name, this.field));
     }
@@ -41,6 +43,7 @@ export class Validator {
         this.validators.push(new FloatMaxField(this.name, this.field, max));
     }
 
+    // Validates  and calls iterated array
     validate() {
         for (let i of this.validators) {
             if (i.validate() === false) {

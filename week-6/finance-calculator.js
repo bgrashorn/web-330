@@ -10,7 +10,9 @@
   ========================================================
  */
 
+//   Creates and exports FinanceCalculator Class
 export class FinanceCalculator {
+    // Does math required for results
     static MONTHS_IN_YEAR = 12;
     static calculateFutureValue(monthlyPayment, rate, years) {
         let month = years * this.MONTHS_IN_YEAR;
