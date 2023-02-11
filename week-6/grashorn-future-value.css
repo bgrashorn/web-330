@@ -1,0 +1,51 @@
+/**
+    Title: grashorn-future-value.css
+    Author: Brett Grashorn
+    Date: 2/7/23
+    Description: Stylesheet for Assignment 6.2 - Future Value App
+    Sources:  Web 330 HTML, CSS, and JavaScript Requirements 
+    document
+    Assign_6 document
+ */
+
+/* Mode Switch adjustments */
+#icon-mode {
+    position: relative;
+    top: 5px;
+    right: 5px;
+}
+
+/* Per Assign_6 */
+.danger {
+    float: right;
+    color: #df546a;
+    font-size: 12px;
+    letter-spacing: 2px;
+    
+}
+
+.form-label {
+    display: inline-block;
+    padding-top: 1rem;
+}
+
+/* Adjustments to make it look like example */
+.card {
+    width: 100%;
+}
+
+.drop-down-menu {
+    width: 20%;
+    border-radius: 3px;
+    height: 30px;
+}
+
+.yearly-rate {
+    padding-right: 22px;
+}
+
+#futureValue {
+    text-align: center;
+    font-weight: 300;
+    font-size: 1.5rem;
+}

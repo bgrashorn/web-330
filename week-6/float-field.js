@@ -10,9 +10,23 @@
   ========================================================
  */
 
+// Creates and exports FloatField class
 export class FloatField {
     constructor(name, field) {
         this.name = name;
         this.field = field;
+    }
+    validate() {
+        // if not NaN return true, else return false
+        if (!Number.isNaN(parseFloat(this.Field))) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    // Structures return message
+    getMessage() {
+        return `${this.name} must be a float value. You entered ${this.field}`;
     }
 }
