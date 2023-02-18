@@ -1,0 +1,179 @@
+<!-- 
+  Title: Assignment 7.2 - What A Book App
+  Author: Brett Grashorn
+  Date: 2/17/2023
+  Description: What a Book App for WEB 330 - Enterprise JavaScript II
+  Sources:  Web 330 HTML, CSS, and JavaScript Requirements 
+            document
+            Assign_7 document
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WEB 330 - Enterprise JavaScript II</title>
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="../theme.css" />
+    <link rel="stylesheet" href="../site.css" />
+    <link rel="stylesheet" href="grashorn-whatabook1.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Kit -->
+    <script
+      src="https://kit.fontawesome.com/0b3339a5a1.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- JavaScript -->
+    <script type="application/javascript" src="../theme.js"></script>
+  </head>
+  <body class="light-theme">
+    <!-- Toggle icon styled according to Assign_1 -->
+    <i
+      onclick="toggleMode(this)"
+      id="icon-mode"
+      class="fa fa-toggle-off pull-right"
+      style="font-size: 28px"
+      ><span id="icon-text"></span
+    ></i>
+
+    <!-- Book List Container -->
+    <div class="assign-container">
+      <h1 class="app-header">Welcome to the WhatABook, Part 1 App!</h1>
+      <div class="assign-content">
+        <div class="card">
+          <div class="card-title">Book Listing</div>
+          <div class="card-content" id="bookList"></div>
+        </div>
+        <!-- Return Home Link -->
+        <a class="return-home" href="../index.html">Return</a>
+      </div>
+    </div>
+
+    <!-- Selection Container -->
+    <div class="assign-container">
+      <div class="assign-content">
+        <div class="card">
+          <div class="card-title">Selected Book</div>
+          <div class="card-content" id="selectedBook"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Mode choice JavaScript -->
+    <script>
+      // Calls function to set Default theme to Light Mode.
+      setDefaultTheme();
+
+      /**
+       * @param x
+       */
+      // Creates function to clear local storage when toggled.
+      function toggleMode(x) {
+        let colorTheme = document.body.classList;
+        let iconMode = x.classList;
+        // If preference is set to light theme it updates Local Storage.
+        if (colorTheme.value === "light-theme") {
+          localStorage.clear();
+          localStorage.setItem("mode", "dark-theme");
+          localStorage.setItem("iconMode", "fa-toggle-on");
+          localStorage.setItem("iconText", "Dark Mode");
+          // If preference is set to light theme it updates Local Storage.
+        } else {
+          localStorage.clear();
+          localStorage.setItem("mode", "light-theme");
+          localStorage.setItem("iconMode", "fa-toggle-off");
+          localStorage.setItem("iconText", "Light Mode");
+        }
+        // Updates HTML Page attributes.
+        colorTheme.value = localStorage.getItem("mode");
+        iconMode.value = `fa ${localStorage.getItem("iconMode")} pull-right`;
+        document.getElementById("icon-text").innerHTML =
+          localStorage.getItem("iconText");
+      }
+    </script>
+
+    <!-- Assign_7 JavaScript -->
+    <script type="module">
+      // When the DOM loads it will load the .xml data as well
+      document.addEventListener("DOMContentLoaded", () => {
+        let fileName = "books.xml";
+
+        // loads our file
+        fetch(fileName)
+          .then((res) => res.text())
+          .then((data) => {
+            let domParser = new DOMParser();
+            let xmlBooks = domParser.parseFromString(data, "text/xml");
+            loadBooks(xmlBooks);
+            addIsbnClickEvents();
+          });
+      });
+
+      //   Creates table
+      function loadBooks(xml) {
+        let books = xml.getElementsByTagName("book");
+
+        let tableData = `<table id="bookTable" class="table"><th>ISBN</th><th>Title</th><th>Description</th><th>Pages</th><th>Authors</th><tbody>`;
+        for (let book of books) {
+          let isbn =
+            book.getElementsByTagName("isbn")[0].childNodes[0].nodeValue;
+          let title =
+            book.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+          let description =
+            book.getElementsByTagName("description")[0].childNodes[0].nodeValue;
+          let pages =
+            book.getElementsByTagName("pages")[0].childNodes[0].nodeValue;
+          let authors =
+            book.getElementsByTagName("authors")[0].childNodes[0].nodeValue;
+
+          tableData += `<tr><td data-value="ISBN" data-id="${isbn}"><a href="#" class="isbn-link">${isbn}</a></td><td data-value="Title" data-id="${title}"">${title}</td><td data-value="Description" data-id="${description}"">${description}</td><td data-value="Pages" data-id="${pages}">${pages}</td><td data-value="Authors" data-id="${authors}">${authors}</td></tr>`;
+        }
+        tableData += `</tbody></table>`;
+        document.getElementById("bookList").innerHTML = tableData;
+      }
+
+      //   this function when displays the information in a list
+      function anchorClicked(e) {
+        e.preventDefault();
+
+        // Structures our data
+        let self = this;
+        let cell = self.parentElement;
+        let row = cell.parentElement;
+
+        let data = row.querySelectorAll("td");
+
+        let bookData = `<ul style="list-style-type:none">`;
+        for (let field of data) {
+          bookData += `<li><b> ${field.dataset.value}:</b> ${field.dataset.id}`;
+        }
+
+        bookData += `</li></ul>`;
+
+        document.getElementById("selectedBook").innerHTML = bookData;
+      }
+
+      //   Function loops over viewButtons variable when isbn is clicked
+      function addIsbnClickEvents() {
+        let viewButtons = document.querySelectorAll(
+          "#bookTable tbody .isbn-link"
+        );
+
+        // iterates over the viewButtons to continue to populate
+        for (let i = 0; i < viewButtons.length; i++) {
+          viewButtons[i].addEventListener("click", anchorClicked);
+        }
+      }
+    </script>
+  </body>
+</html>
