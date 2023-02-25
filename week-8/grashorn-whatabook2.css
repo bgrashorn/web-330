@@ -1,0 +1,29 @@
+/**
+    Title: grashorn-whatabook2.css
+    Author: Brett Grashorn
+    Date: 2/24/23
+    Description: Stylesheet for Assignment 8.2 - WhatABook Part 2
+    Sources:  Web 330 HTML, CSS, and JavaScript Requirements 
+    document
+ */
+
+ .card {
+    width: 100%;
+    margin: auto;
+}
+
+th {
+    width: 25%;
+    margin: auto;
+    text-align: center;
+}
+
+#icon-mode {
+    position: relative;
+    top: 5px;
+    right: 5px;
+}
+
+.return-home {
+    margin-top: 10px;
+}
