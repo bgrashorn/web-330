@@ -127,11 +127,13 @@
         jscmd: "details",
       };
 
+      let testRes = null;
+
       http
         .get("https://openlibrary.org/api/books", params)
         .then((res) => {
           console.log(res);
-
+          testRes = res;
           document.getElementById("bookList").innerHTML = buildHtmlString(
             res,
             "table"
@@ -149,23 +151,13 @@
         let self = this;
         let isbn = self.innerText;
 
-        const params = {
-          bibkeys: `ISBN: ${isbns.join(",")}`,
-          format: "json",
-          jscmd: "details",
-        };
-        console.log(params);
-        http
-          .get("https://openlibrary.org/api/books", params)
-          .then((res) => {
-            document.getElementById("selectedBook").innerHTML = buildHtmlString(
-              res,
-              "ul"
-            );
-          })
-          .catch((e) => {
-            console.log(e);
-          });
+        let newParam = {};
+        newParam[isbn] = testRes[isbn];
+
+        document.getElementById("selectedBook").innerHTML = buildHtmlString(
+          newParam,
+          "ul"
+        );
       }
 
       function buildHtmlString(res, format) {
