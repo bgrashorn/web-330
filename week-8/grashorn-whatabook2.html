@@ -103,10 +103,13 @@
 
     <!-- Assignment 8 JavaScript -->
     <script type="module">
+      // Imports our http-client class
       import { HttpClient } from "./http-client.js";
 
+      // Instantiates new HttpClient
       let http = new HttpClient();
 
+      // List of ISBNs on website
       const isbns = [
         "0345339681",
         "026110357",
@@ -121,6 +124,7 @@
 
       console.log(isbns);
 
+      // Defines parameters needed
       const params = {
         bibkeys: `ISBN: ${isbns.join(",")}`,
         format: "json",
@@ -129,6 +133,7 @@
 
       let testRes = null;
 
+      // Connects needed data and assigns it where to go
       http
         .get("https://openlibrary.org/api/books", params)
         .then((res) => {
@@ -145,12 +150,14 @@
           console.log(e);
         });
 
+      // Gets our books and displays them in the correct div
       function getBook(e) {
         e.preventDefault();
 
         let self = this;
         let isbn = self.innerText;
 
+        // New parameters for Selected Book div
         let newParam = {};
         newParam[isbn] = testRes[isbn];
 
@@ -160,6 +167,7 @@
         );
       }
 
+      // Function that builds our Book List Table
       function buildHtmlString(res, format) {
         let tableString = `<table id='bookTable' class='table'><th>ISBN</th><th>Title</th><th>Description</th><th>Pages</th><th>Authors</th>`;
 
@@ -167,7 +175,7 @@
 
         for (let key in res) {
           ulString += `<ul style="list-style-type:none">`;
-
+          // Gets correct details for our book list
           if (res.hasOwnProperty(key)) {
             let authors = [];
             if (res[key].details.authors) {
@@ -190,6 +198,7 @@
               authors: authors ? authors.join(",") : "",
             };
             console.log(book);
+            // Builds our Selected Book div
             ulString += `<li><b>ISBN:</b> ${book.isbn}</li>
               <li><b>Title:</b ${book.title}</li>
                 <li><b>Description:</b> ${book.description}</li>
@@ -211,6 +220,7 @@
         }
       }
 
+      // Creates click event to display selected book from our table
       function addIsbnClickEvents() {
         let viewButtons = document.querySelectorAll(
           "#bookTable tbody .isbn-link"
